@@ -278,6 +278,37 @@ a:hover {
   height: 24px; 
 }
 
+/*PART -2*/
+
+#local-nav-closed {
+  display: none;
+}
+
+#local-nav-open {
+  display: block;
+}
+
+.intro {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.intro h1 {
+  font-family: var(--bs-font-serif);
+  font-size: 2rem;
+  margin: 0 0 .75rem 0;
+}
+
+.intro p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--bs-gray-800);
+  max-width: 70ch;
+}
+
+
+
  /*svg {
   background-color: var(--bs-black);
   fill: white; } */
