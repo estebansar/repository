@@ -349,7 +349,13 @@ a:hover {
   padding: 1.50rem;
 }
 
+#park-footer .contact h3, #park-footer .contact h4 {
+  margin: .4rem 0;
+}
 
+#park-footer .contact p {
+  margin: 0;
+}
 
 
  /*svg {
