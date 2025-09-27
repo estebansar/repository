@@ -314,6 +314,11 @@ a:hover {
   padding: 1rem;
 }
 
+@media (min-width: 780px) {
+  .info {grid-template-columns: repeat(3, 1fr);}
+}
+
+
 
 
 
