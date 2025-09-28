@@ -235,6 +235,10 @@ a:hover {
   background: rgba(0,0,0,.65);
   color: #fff;
   padding: .75rem 1rem;
+  display: flex;
+  align-items: flex-end;
+  gap: .75rem;
+  flex-wrap: wrap;
 }
 
 .hero-banner__title {
@@ -242,13 +246,33 @@ a:hover {
   font-weight: 700;
   color: #fff;
   text-decoration: none;
+  margin: 0;
 }
 
 .hero-banner__subtitle {
-  margin-top: .25rem;
-  display: flex;
-  gap: .5rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 400;
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.1;
+  gap: .1rem;
+  margin: 0;
+  align-items: baseline;
+}
+.hero-banner__subtitle span {
+  display: block;
+}
+
+
+.hero-banner__title,
+.hero-banner__title:link,
+.hero-banner__title:visited {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.hero-banner__title:hover {
+  color: #ddd;
 }
 
 .park-nav > ul {
