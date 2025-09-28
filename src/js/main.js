@@ -33,9 +33,19 @@ function setHeaderInfo(data) {
         parkInfoTemplate(data);
 }
 
+function getDisplayName(data) {
+  if (data.name) return data.name;
+
+  const d = (data.designation || "").trim();
+  if (d && data.fullName.endsWith(d)) {
+    return data.fullName.slice(0,data.fullName.length - d.length).trim();
+  }
+  return data.fullName;
+}
+
 function parkInfoTemplate(data) {
   return `
-    <a href="${data.url}" class="hero-banner__title">${data.fullName}</a>
+    <a href="${data.url}" class="hero-banner__title">${getDisplayName(data)}</a>
     <p class="hero-banner__subtitle">
       <span>${data.designation}</span>
       <span>${data.states}</span>
@@ -82,34 +92,46 @@ function mediaCardTemplate(info) {
   `;
 }
 
-
-
-
-
-
-
-document.title = parkData.fullName;
-
-const disclaimerLink = document.querySelector(".disclaimer > a");
-if (disclaimerLink) {
-    disclaimerLink.href = parkData.url;
-    disclaimerLink.textContent = parkData.fullName;
+function getMailingAddress(addresses) {
+  const mailing = addresses.find((address) => address.type === "Mailing");
+  return mailing;
 }
 
-const heroImg = document.querySelector("#park-header .hero-banner > img");
-const img0 = parkData?.images?.[0];
-if (heroImg && img0) {
-    heroImg.src = img0.url;
-    heroImg.alt = img0.altText || parkData.fullName;
+function getVoicePhone(numbers) {
+  const voice = numbers.find((num) => num.type === "Voice");
+  return voice ? voice.phoneNumber : "";
 }
 
-const titleLink = document.querySelector(".hero-banner__title");
-  const subtitle = document.querySelector(".hero-banner__subtitle");
-  if (titleLink) titleLink.textContent = parkData.fullName;
-  if (subtitle) {
-    const [desig, states] = subtitle.querySelectorAll("span");
-    if (desig) desig.textContent = parkData.designation;
-    if (states) states.textContent = parkData.states;
-  }
-});
+function footerTemplate(info) {
+  const mailing = getMailingAddress(info.addresses);
+  const voice = getVoicePhone(info.contacts.phoneNumbers);
+
+  return `
+    <section class="contact">
+      <h3>Contact Info</h3>
+      <h4>Mailing Address:</h4>
+     <div>
+      <p>${mailing.line1}</p>
+      <p>${mailing.city}, ${mailing.stateCode} ${mailing.postalCode}</p>
+     </div>
+      <h4>Phone:</h4>
+      <p>${voice}</p>
+    </section>
+  `;
+}
+
+function setFooter(data) {
+  const footer = document.getElementById("park-footer");
+  footer.innerHTML = footerTemplate(data);
+}
+
+function setParkIntro(data) {
+  const introEl = document.querySelector(".intro");
+  introEl.innerHTML = `
+    <h1>${data.fullName}</h1>
+    <p>${data.description}</p>
+  `;
+}
+  
+
 
