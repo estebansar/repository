@@ -65,6 +65,26 @@ const parkInfoLinks = [
   }
 ];
 
+function setParkInfoCards(items) {
+  const infoEl = document.querySelector(".info");
+  infoEl.innerHTML = items.map(mediaCardTemplate).join("");
+}
+
+function mediaCardTemplate(info) {
+  return `
+    <article class="media-card">
+      <a href="${info.link}">
+        <img class="media-card__img" src="${info.image}" alt="${info.name}">
+        <h3 class="media-card__title">${info.name}</h3>
+      </a>
+      <p>${info.description}</p>
+    </article>
+  `;
+}
+
+
+
+
 
 
 
