@@ -1,8 +1,17 @@
 import { getParkData } from "./parkService.mjs";
 
 window.addEventListener("DOMContentLoaded", () => {
-
 const parkData = getParkData();
+
+// part2
+setHeaderInfo(parkData);
+setParkIntro(parkData);
+setParkInfoCards(parkInfoLinks);
+setFooter(parkData); 
+
+//menu toggle
+const menuBtn = document.getElementById("global-nav-toggle");
+
 
 document.title = parkData.fullName;
 
