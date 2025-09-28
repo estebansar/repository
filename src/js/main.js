@@ -58,7 +58,14 @@ const parkInfoLinks = [
     description: "Learn about the fees and passes that are available."
   },
   {
-    
+    name: "Visitor Centers &#x203A;",
+    link: "visitor_centers.html",
+    image: getParkData().images[9].url,
+    description: "Learn about the visitor centers in the park."
+  }
+];
+
+
 
 
 document.title = parkData.fullName;
