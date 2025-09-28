@@ -383,6 +383,9 @@ a:hover {
 
 #park-footer {
   padding: 1.50rem;
+  background: #f6f6f6;
+  border-top: 1px solod #ddd;
+  padding: 1.5rem;
 }
 
 #park-footer .contact h3, #park-footer .contact h4 {
@@ -391,8 +394,20 @@ a:hover {
 
 #park-footer .contact p {
   margin: 0;
+  font-size: .9rem;
 }
 
+#park-footer .contact h3 {
+  text-transform: uppercase;  
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+#park-footer .contact h4 {
+  font-weight: bold;         
+  margin: .5rem 0 .25rem;
+  font-size: .95rem;
+}
 
  /*svg {
   background-color: var(--bs-black);
