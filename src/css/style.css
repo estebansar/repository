@@ -367,6 +367,18 @@ a:hover {
   margin: .4rem 1rem 1rem;
 }
 
+.media-card__title,
+.media-card__title a,
+.media-card__title a:link,
+.media-card__title a:visited {
+  color: #000;              
+  text-decoration: none;   
+}
+
+.media-card__title a:hover {
+  text-decoration: underline; 
+}
+
 /*footer*/
 
 #park-footer {
