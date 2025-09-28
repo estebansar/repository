@@ -11,6 +11,16 @@ setFooter(parkData);
 
 //menu toggle
 const menuBtn = document.getElementById("global-nav-toggle");
+const localNav = document.getElementById("local-nav");
+localNav.classList.add("closed");
+menuBtn.addEventListener("click", () => {
+  const isOpen = localNav.classList.contains("open");
+  localNav.classList.toggle("open", !isOpen);
+  localNav.classList.toggle("closed", isOpen);
+  menuBtn.setAttribute("aria-expanded", String(!isOpen));
+  });
+});
+
 
 
 document.title = parkData.fullName;
