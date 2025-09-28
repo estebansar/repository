@@ -378,6 +378,19 @@ a:hover {
   text-decoration: underline; 
 }
 
+.media-card > a,
+.media-card > a:link,
+.media-card > a:visited {
+  color: #000 !important;  
+  text-decoration: none !important;
+  display: block;            
+}
+
+.media-card > a:hover .media-card__title {
+  text-decoration: underline;
+}
+
+
 /*footer*/
 
 #park-footer {
