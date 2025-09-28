@@ -21,6 +21,44 @@ menuBtn.addEventListener("click", () => {
   });
 });
 
+//---function---
+function setHeaderInfo(data) {
+  const disclaimer = document.querySelector(".disclaimer > a");
+  disclaimer.href = data.url;
+  disclaimer.innerHTML = data.fullName;
+
+  document.querySelector("head > title").textContent = data.fullName;
+  document.querySelector(".hero-banner > img").src = data.images[0].url;
+  document.querySelector(".hero-banner__content").innerHTML =
+        parkInfoTemplate(data);
+}
+
+function parkInfoTemplate(data) {
+  return `
+    <a href="${data.url}" class="hero-banner__title">${data.fullName}</a>
+    <p class="hero-banner__subtitle">
+      <span>${data.designation}</span>
+      <span>${data.states}</span>
+    </p>
+  `;
+}
+
+const parkInfoLinks = [
+  {
+    name: "Current Conditions &#x203A;",
+    link: "conditions.html",
+    image: getParkData().images[2].url,
+    description:
+      "See what conditions to expect in the park before leaving on your trip!"
+  },
+  {
+    name: "Fees and Passes &#x203A;",
+    link: "fees.html",
+    image: getParkData().images[3].url,
+    description: "Learn about the fees and passes that are available."
+  },
+  {
+    
 
 
 document.title = parkData.fullName;
