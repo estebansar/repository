@@ -36,11 +36,15 @@ function setHeaderInfo(data) {
 function getDisplayName(data) {
   if (data.name) return data.name;
 
+  const full = (data.fullName || "").trim();
   const d = (data.designation || "").trim();
-  if (d && data.fullName.endsWith(d)) {
-    return data.fullName.slice(0,data.fullName.length - d.length).trim();
+
+  if (d) {
+    const re = new RegExp(`\\s*${d}\\s*$`); // remove " National Park" (or similar) at the end
+    return full.replace(re, "").trim();
   }
-  return data.fullName;
+
+  return full;
 }
 
 function parkInfoTemplate(data) {
