@@ -304,11 +304,11 @@ a:hover {
 
 /*PART -2*/
 
-#local-nav-closed {
+#local-nav.closed {
   display: none;
 }
 
-#local-nav-open {
+#local-nav.open {
   display: block;
 }
 /*intro*/
@@ -367,17 +367,6 @@ a:hover {
   margin: .4rem 1rem 1rem;
 }
 
-.media-card__title a,
-.media-card__title a:link,
-.media-card__title a:visited {
-  color: #000;              
-  text-decoration: none;   
-}
-
-.media-card__title a:hover {
-  text-decoration: underline; 
-}
-
 .media-card > a,
 .media-card > a:link,
 .media-card > a:visited {
@@ -394,11 +383,11 @@ a:hover {
 /*footer*/
 
 #park-footer {
-  padding: 1.50rem;
-  background: #f6f6f6;
-  border-top: 1px solod #ddd;
   padding: 1.5rem;
+  border-top: 1px solid #ddd;                          
+  background: #f6f6f6 url("../images/topo_pattern.png") repeat; 
 }
+
 
 #park-footer .contact h3, #park-footer .contact h4 {
   margin: .4rem 0;
@@ -420,6 +409,8 @@ a:hover {
   margin: .5rem 0 .25rem;
   font-size: .95rem;
 }
+
+
 
  /*svg {
   background-color: var(--bs-black);

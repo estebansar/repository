@@ -1,0 +1,54 @@
+export function getDisplayName(data) {
+  if (data.name) return data.name;
+  const full = (data.fullName || "").trim();
+  const d = (data.designation || "").trim();
+  if (!d) return full;
+  const re = new RegExp(`\\s*${d}\\s*$`);
+  return full.replace(re, "").trim() || full;
+}
+
+export function parkInfoTemplate(data) {
+  return `
+    <a href="${data.url}" class="hero-banner__title">${getDisplayName(data)}</a>
+    <p class="hero-banner__subtitle">
+      <span>${data.designation}</span>
+      <span>${data.states}</span>
+    </p>
+  `;
+}
+
+export function mediaCardTemplate(info) {
+  return `
+    <article class="media-card">
+      <a href="${info.link}">
+        <img class="media-card__img" src="${info.image}" alt="${info.name}">
+        <h3 class="media-card__title">${info.name}</h3>
+      </a>
+      <p>${info.description}</p>
+    </article>
+  `;
+}
+
+export function getMailingAddress(addresses) {
+  return addresses.find(a => a.type === "Mailing");
+}
+export function getVoicePhone(numbers) {
+  const v = numbers.find(n => n.type === "Voice");
+  return v ? v.phoneNumber : "";
+}
+export function footerTemplate(info) {
+  const mailing = getMailingAddress(info.addresses);
+  const voice = getVoicePhone(info.contacts.phoneNumbers);
+  return `
+    <section class="contact">
+      <h3>Contact Info</h3>
+      <h4>Mailing Address:</h4>
+      <div>
+        <p>${mailing.line1}</p>
+        <p>${mailing.city}, ${mailing.stateCode} ${mailing.postalCode}</p>
+      </div>
+      <h4>Phone:</h4>
+      <p>${voice}</p>
+    </section>
+  `;
+}
