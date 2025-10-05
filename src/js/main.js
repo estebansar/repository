@@ -2,6 +2,8 @@ import { getParkData, getParkInfoLinks } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";
 import { mediaCardTemplate } from "./templates.mjs";
 
+console.log("Has API key?", Boolean(import.meta.env.VITE_NPS_API_KEY));
+
 window.addEventListener("DOMContentLoaded", () => {
   const parkData = getParkData();
 
