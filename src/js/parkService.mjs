@@ -209,3 +209,33 @@ export function getParkInfoLinks() {
     }
   ];
 }
+
+//-----part 3------
+
+const BASE_URL = "https://developer.nps.gov/api/v1/parks";
+//fetch JSON with my API key------
+async function getJson(url) {
+  const apiKey = import.meta.env.VITE_NPS_API_KEY;
+  if (!apiKey) throw new Error("Missing VITE_NPS_API_KEY in .env");
+
+  const response = await fetch(url, {
+    headers: {
+      "X-Api-Key": apiKey,
+      "Accept": "application/json"
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`NPS API request failed: ${response.status} ${response.statusText}`);
+  }
+
+  return response.json();
+}
+
+//--- lets get live park fetch----
+
+export async function fetchParkFromAPI(parkCode = "yell") {
+  const url = `${BASE_URL}?parkCode=${parkCode}`;
+  const data = await getJson(url);
+  return data?.data?.[0]; // first match
+}
