@@ -4,8 +4,8 @@ import { mediaCardTemplate } from "./templates.mjs";
 
 console.log("Has API key?", Boolean(import.meta.env.VITE_NPS_API_KEY));
 
-window.addEventListener("DOMContentLoaded", () => {
-  const parkData = getParkData();
+window.addEventListener("DOMContentLoaded", async () => {
+  const parkData = await getParkData("yell");
 
   // header + footer
   setHeaderFooter(parkData);
