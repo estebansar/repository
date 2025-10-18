@@ -85,3 +85,10 @@ export function visitorCenterTemplate(vc) {
     <p><strong>Directions:</strong> ${vc.directionsInfo ?? ""}</p>
   </li>`;
 }
+
+//activities/
+
+export function activityTemplate(act) {
+  const name = act?.name ?? act ?? "";
+  return `<li class="activity-item">${name}</li>`;
+}
