@@ -75,3 +75,13 @@ export function alertTemplate(alert) {
     </div>
   </li>`;
 }
+
+// part 4: updating tempalte for visitorcenter/
+
+export function visitorCenterTemplate(vc) {
+  return `<li class="visitor-item">
+    <h3>${vc.name ?? ""}</h3>
+    <p>${vc.description ?? ""}</p>
+    <p><strong>Directions:</strong> ${vc.directionsInfo ?? ""}</p>
+  </li>`;
+}
