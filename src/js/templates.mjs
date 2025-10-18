@@ -66,7 +66,7 @@ export function alertTemplate(alert) {
       alertType = "closure";
       break;
     default:
-      alertType = alert.category.toLowerCase();
+      alertType = (alert.category || "").toLowerCase();
   }
 
   return `<li class="alert">
@@ -74,8 +74,8 @@ export function alertTemplate(alert) {
       <use xlink:href="${spritePath}#alert-${alertType}"></use>
     </svg>
     <div>
-      <h3 class="alert-${alertType}">${alert.title}</h3>
-      <p>${alert.description}</p>
+      <h3 class="alert-${alertType}">${alert.title ?? ""}</h3>
+      <p>${alert.description ?? ""}</p> 
     </div>
   </li>`;
 }
