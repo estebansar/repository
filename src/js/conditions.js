@@ -35,5 +35,6 @@ async function init() {
   setHeaderFooter(parkData);
   setAlerts(alerts);
   setVisitorCenters(centers);
+  setActivities(parkData.activities || []);
 }
 init();
