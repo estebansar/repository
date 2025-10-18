@@ -247,3 +247,11 @@ export async function getParkAlerts(parkCode) {
   const data = await getJson(url); // will use the getJson
   return data?.data ?? [];
 }
+
+// visitor center/
+
+export async function getVisitorCenterData(parkCode) {
+  const url = `https://developer.nps.gov/api/v1/visitorcenters?parkCode=${parkCode}&limit=50&api_key=${import.meta.env.VITE_NPS_KEY}`;
+  const data = await getJson(url);
+  return data?.data ?? [];
+}
