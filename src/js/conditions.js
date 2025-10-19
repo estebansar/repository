@@ -1,4 +1,4 @@
-console.log("ENV PRESENT?", !!import.meta.env.VITE_NPS_API_KEY);
+
 //updated
 import "../css/style.css";        
 import "../css/conditions.css";

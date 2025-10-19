@@ -39,3 +39,50 @@
 .activity-item + .activity-item {
   margin-top: .5rem;
 }
+
+
+
+/* part 4*/
+
+/* Local Park Navigation Ribbon  */
+.park-nav {
+  background-color: #000;
+  color: #fff;
+}
+
+.park-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.park-nav a {
+  display: grid;
+  place-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.8rem;
+}
+
+.park-nav a[aria-current="page"] {
+  color: #9ad0ff;
+}
+
+.park-nav .icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* ribbon always visible even on small screens */
+#local-nav {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
