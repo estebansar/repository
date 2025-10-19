@@ -14,7 +14,10 @@ export default function setHeaderFooter(data) {
   if (heroImg) heroImg.src = data.images[0]?.url || "";
 
   const heroContent = document.querySelector(".hero-banner__content");
-  if (heroContent) heroContent.innerHTML = parkInfoTemplate(data);
+// only set hero banner content if it's empty
+  if (heroContent && heroContent.innerHTML.trim() === "") {
+  heroContent.innerHTML = parkInfoTemplate(data);
+  }
 
   const footerEl = document.querySelector("footer, #park-footer, #site-footer");
   if (footerEl) footerEl.innerHTML = footerTemplate(data);
