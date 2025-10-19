@@ -213,10 +213,19 @@ export function getParkInfoLinks() {
 //-----part 3------
 
 const BASE_URL = "https://developer.nps.gov/api/v1/parks";
-//fetch JSON with my API key------
+
+// unified helper for the key
+function getApiKey() {
+  return import.meta.env.VITE_NPS_API_KEY || import.meta.env.VITE_NPS_KEY || "";
+}
+
+//fetch JSON with API key (safe)
 async function getJson(url) {
-  const apiKey = import.meta.env.VITE_NPS_API_KEY;
-  if (!apiKey) throw new Error("Missing VITE_NPS_API_KEY in .env");
+  const apiKey = getApiKey();
+
+  if (!apiKey) {
+    console.warn("⚠️ API key not detected. Check .env placement or restart Vite.");
+  }
 
   const response = await fetch(url, {
     headers: {
@@ -235,7 +244,8 @@ async function getJson(url) {
 //--- lets get live park fetch----
 
 export async function fetchParkFromAPI(parkCode = "yell") {
-  const url = `${BASE_URL}?parkCode=${parkCode}`;
+  const apiKey = getApiKey();
+  const url = `${BASE_URL}?parkCode=${parkCode}&api_key=${apiKey}`;
   const data = await getJson(url);
   return data?.data?.[0]; // first match
 }
@@ -243,15 +253,17 @@ export async function fetchParkFromAPI(parkCode = "yell") {
 //part 4//
 
 export async function getParkAlerts(parkCode) {
-  const url = `https://developer.nps.gov/api/v1/alerts?parkCode=${parkCode}&limit=50&api_key=${import.meta.env.VITE_NPS_KEY}`;
-  const data = await getJson(url); // will use the getJson
+  const apiKey = getApiKey();
+  const url = `https://developer.nps.gov/api/v1/alerts?parkCode=${parkCode}&limit=50&api_key=${apiKey}`;
+  const data = await getJson(url);
   return data?.data ?? [];
 }
 
 // visitor center/
 
 export async function getVisitorCenterData(parkCode) {
-  const url = `https://developer.nps.gov/api/v1/visitorcenters?parkCode=${parkCode}&limit=50&api_key=${import.meta.env.VITE_NPS_KEY}`;
+  const apiKey = getApiKey();
+  const url = `https://developer.nps.gov/api/v1/visitorcenters?parkCode=${parkCode}&limit=50&api_key=${apiKey}`;
   const data = await getJson(url);
   return data?.data ?? [];
 }

@@ -1,9 +1,10 @@
-
+console.log("ENV PRESENT?", !!import.meta.env.VITE_NPS_API_KEY);
 //updated
 import "../css/style.css";        
 import "../css/conditions.css";
-import { getParkData, getParkAlerts, getVisitorCenterData } from "./parkService.mjs"; //  merged import
-import { alertTemplate, visitorCenterTemplate, activityTemplate } from "./templates.mjs"; // merged import
+
+import { fetchParkFromAPI, getParkAlerts, getVisitorCenterData } from "./parkService.mjs";
+import { alertTemplate, visitorCenterTemplate, activityTemplate } from "./templates.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";
 
 
@@ -31,15 +32,14 @@ function setActivities(activities) {
 }
 
 async function init() {
-  const parkData = await getParkData();
-  console.log("parkData:", parkData); 
+  const parkData = await fetchParkFromAPI("yell");
+  console.log("parkData:", parkData);
 
-  // 
-  const code = parkData.parkCode ?? parkData?.data?.[0]?.parkCode;
-  console.log("using parkCode:", code); 
+  const code = parkData.parkCode;
+  console.log("using parkCode:", code);
 
   const alerts = await getParkAlerts(code);
-  console.log("alerts:", alerts?.length); 
+  console.log("alerts:", alerts?.length);
 
   const centers = await getVisitorCenterData(code);
   console.log("visitor centers:", centers?.length);
@@ -47,6 +47,6 @@ async function init() {
   setHeaderFooter(parkData);
   setAlerts(alerts || []);
   setVisitorCenters(centers || []);
-  setActivities(parkData.activities || parkData?.data?.[0]?.activities || []);
+  setActivities(parkData.activities || []);
 }
 init();
