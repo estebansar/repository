@@ -16,7 +16,7 @@ export default function setHeaderFooter(data) {
   const heroContent = document.querySelector(".hero-banner__content");
 // only set hero banner content if it's empty
   if (heroContent && heroContent.innerHTML.trim() === "") {
-  heroContent.innerHTML = parkInfoTemplate(data);
+    heroContent.innerHTML = parkInfoTemplate(data);
   }
 
   const footerEl = document.querySelector("footer, #park-footer, #site-footer");
