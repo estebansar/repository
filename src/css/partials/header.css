@@ -44,8 +44,15 @@
   color: #fff;
 }
 
+.global-nav.show {
+  max-height: 1000px; /*this number will allow the content to fully show*/
+}
 
-
+.global-nav_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 /* Part5_ adding global-nav */
 
