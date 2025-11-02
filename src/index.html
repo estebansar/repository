@@ -45,7 +45,8 @@
       <section class="global-header">
         <a href="index.html" class="site-title"
           ><span class="logo" role="presentation"></span>
-          <span>National Park Service</span></a
+          <span>National Park Service</span>
+        </a
         >
         <div class="global-header__right">
           <a class="search-icon" href="#park-footer" aria-label="Search">
@@ -55,15 +56,50 @@
             </svg>
             <span class="visually-hidden">Search</span>
           </a>
-          <button id="global-nav-toggle" aria-expanded="false" aria-controls="local-nav">
-            <svg class="icon" role="img" aria-hidden="true">
-              <use xlink:href="images/sprite.symbol.svg#menu"></use>
-            </svg>
-            <span class="visually-hidden">Open</span> Menu
+
+          <!--part 5 updating menu botton-->
+          <button
+            id="global-nav-toggle"
+            class="global-nav__toggle"
+            aria-expanded="false"
+            aria-label="Open Menu"
+            aria-controls="global-nav"
+            type="button"
+          >
+            <div class="global-nav_toggle-closed">
+              <svg class="icon" role="img" aria-hidden="true">
+                <use xlink:href="images/sprite.symbol.svg#menu"></use>
+              </svg>
+              <span class="visually-hidden">Open</span> Menu
+           </div>
+
+           <div class="global-nav_toggle-open">
+              <svg class="icon" role="img" aria-hidden="true">
+                <use xlink:href="images/sprite.symbol.svg#close"></use>
+              </svg>
+              Close
+            </div>
           </button>
         </div>
-        
       </section>
+<!--still part 5, global(site0wide) nav  so the menu opens/close- after section (global headerbut eofre section: park-header)-->
+      <nav class="global-nav" id="global-nav" aria-label="Explore the National Park Service">
+        <h2 class="global-nav_section-heading">Explore the National Park Service</h2>
+        <ul class="global-nav_list">
+          <li>
+            <div class="global-nav_split-button">
+              <a href="#" class="global-nav_link">Plan Your Visit</a>
+              <button class="global-nav_split-button-toggle" type="button" aria-label="Toggle submenu for Plan Your Visit">
+                <svg class="icon" role="presentation" focusable="false">
+                  <use xlink:href="images/sprite.symbol.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+
       <section id="park-header">
         <div class="hero-banner">
           <img src="" alt="" />
