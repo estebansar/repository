@@ -11,11 +11,13 @@ export default function setHeaderFooter(data) {
   }
 
   const heroImg = document.querySelector(".hero-banner > img");
-  if (heroImg) heroImg.src = data.images[0]?.url || "";
+  if (heroImg) {
+     heroImg.src = data.images[0]?.url || "";
+  }
 
   const heroContent = document.querySelector(".hero-banner__content");
-// only set hero banner content if it's empty
-  if (heroContent && heroContent.innerHTML.trim() === "") {
+// only set hero banner content if it's empty... updated_01nov2025 to: "update hero banner content for the current park"
+  if (heroContent) {
     heroContent.innerHTML = parkInfoTemplate(data);
   }
 
