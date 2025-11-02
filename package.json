@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build --emptyOutDir",
-    "preview": "vite preview"
-  },
+"scripts": {
+  "dev": "vite",
+  "start": "vite",
+  "build": "vite build --emptyOutDir",
+  "preview": "vite preview",
+  "lint": "eslint *.js src/**/*.js",
+  "lint-fix": "eslint *.js src/**/*.js --fix"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
