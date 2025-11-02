@@ -89,6 +89,7 @@
   display: none;
   align-items: center;
   gap: .5rem;
+}
 
   /*when the button has aria-expanded="true", flip the labels */
 
