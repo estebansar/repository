@@ -4,18 +4,23 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-"scripts": {
-  "dev": "vite",
-  "start": "vite",
-  "build": "vite build --emptyOutDir",
-  "preview": "vite preview",
-  "lint": "eslint *.js src/**/*.js",
-  "lint-fix": "eslint *.js src/**/*.js --fix"
-},
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build --emptyOutDir",
+    "preview": "vite preview",
+    "lint": "eslint *.js src/**/*.js",
+    "lint-fix": "eslint *.js src/**/*.js --fix"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "vite": "^6.2.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "globals": "^16.5.0"
   }
 }
