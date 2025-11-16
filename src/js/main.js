@@ -16,21 +16,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   // intro
   setParkIntro(parkData);
 
-  // info cards
-  setParkInfoLinks(getParkInfoLinks());
-
-  // menu toggle
-  const menuBtn = document.getElementById("global-nav-toggle");
-  const globalNav = document.getElementById("global-nav"); //part5_lets replace the localNav wit the globalNav
-
-  globalNav.classList.remove("show");   //part5_it starts hiddien
-
-  menuBtn.addEventListener("click", (ev) => {
-    const btn = ev.target.closest("button"); //part5_if the en uer clicks the icon this will gind the real butotn
-    const isOpenNow = globalNav.classList.toggle("show");   // part5_this will slide the global mane open/closed
-    btn.setAttribute("aria-expanded", String(isOpenNow));
-  });
-});
+//part6_ moved anv toggle logic out of main.js 
 
 //above_final part5
 
