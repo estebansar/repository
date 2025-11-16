@@ -16,6 +16,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   // intro
   setParkIntro(parkData);
 
+  // info cards
+  setParkInfoLinks(getParkInfoLinks());
+
 //part6_ moved anv toggle logic out of main.js 
 
 //above_final part5

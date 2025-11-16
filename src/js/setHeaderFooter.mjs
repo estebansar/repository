@@ -1,4 +1,5 @@
 import { parkInfoTemplate, footerTemplate } from "./templates.mjs";
+import { enableNavigation } from "./navigation.mjs"; // NEW (Part 6)
 
 export default function setHeaderFooter(data) {
   // Update page title
@@ -23,4 +24,8 @@ export default function setHeaderFooter(data) {
 
   const footerEl = document.querySelector("footer, #park-footer, #site-footer");
   if (footerEl) footerEl.innerHTML = footerTemplate(data);
+
+enableNavigation(); // NEW (Part 6): enable global navigation menu + submenu behavior
+
 }
+
