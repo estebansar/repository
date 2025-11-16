@@ -18,14 +18,13 @@ export function enableNavigation() {
 
  // Submenu toggles (small arrow buttons next to each top-level link)
  
-    const submenuButtons = globalNav.querySelectorAll(
-        ".global-nav_split-button-toggle"
-    );
+    const submenuButtons = globalNav.querySelectorAll(".global-nav_split-button-toggle");
 
     submenuButtons.forEach((btn) => {
         btn.setAttribute("aria-expanded", "false");
 
         const parentItem = btn.closest("li"); 
+        const submenu = parentItem
             ? parentItem.querySelector(".global-nav_submenu")
             : null;
 
