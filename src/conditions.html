@@ -47,58 +47,118 @@
         </button>
       </div>
     </section>
+
+          <!-- NEW (Part 6): global menu with submenus -->
+    <nav class="global-nav" id="global-nav" aria-label="Explore the National Park Service">
+      <h2 class="global-nav_section-heading">Explore the National Park Service</h2>
+
+      <ul class="global-nav_list">
+
+        <li>
+          <div class="global-nav_split-button">
+            <a href="#" class="global-nav_link">Plan Your Visit</a>
+            <button class="global-nav_split-button-toggle" type="button" aria-label="Toggle submenu">
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="images/sprite.symbol.svg#arrow"></use>
+              </svg>
+            </button>
+          </div>
+
+          <ul class="global-nav_submenu">
+            <li><a href="#">Find a Park</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Passes</a></li>
+            <li><a href="#">Trip Ideas</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="global-nav_split-button">
+            <a href="#" class="global-nav_link">Learn &amp; Explore</a>
+            <button class="global-nav_split-button-toggle" type="button" aria-label="Toggle submenu">
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="images/sprite.symbol.svg#arrow"></use>
+              </svg>
+            </button>
+          </div>
+
+          <ul class="global-nav_submenu">
+            <li><a href="#">History &amp; Culture</a></li>
+            <li><a href="#">Nature</a></li>
+            <li><a href="#">Education</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="global-nav_split-button">
+            <a href="#" class="global-nav_link">Get Involved</a>
+            <button class="global-nav_split-button-toggle" type="button" aria-label="Toggle submenu">
+              <svg class="icon" role="presentation" focusable="false">
+                <use xlink:href="images/sprite.symbol.svg#arrow"></use>
+              </svg>
+            </button>
+          </div>
+
+          <ul class="global-nav_submenu">
+            <li><a href="#">Volunteer</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Work with Us</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav> 
   </header>
 
   <section class="hero-banner">
     <img src="images/topo_pattern.png" alt="Yellowstone National Park background pattern">
     <div class="hero-banner__content"></div>
   </section>
-<!--lets keep the other icons-->
-<!-- Local (park) nav -->
-<nav id="local-nav" class="park-nav" aria-label="Park sections">
-  <ul>
-    <li>
-      <a href="index.html">
-        <svg class="icon" role="presentation" focusable="false">
-          <use xlink:href="images/sprite.symbol.svg#info"></use>
-        </svg>
-        <span>Info</span>
-      </a>
-    </li>
-    <li>
-      <a href="conditions.html" aria-current="page">
-        <svg class="icon" role="presentation" focusable="false">
-          <use xlink:href="images/sprite.symbol.svg#alert"></use>
-        </svg>
-        <span>Alerts</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <svg class="icon" role="presentation" focusable="false">
-          <use xlink:href="images/sprite.symbol.svg#location"></use>
-        </svg>
-        <span>Maps</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <svg class="icon" role="presentation" focusable="false">
-          <use xlink:href="images/sprite.symbol.svg#calendar"></use>
-        </svg>
-        <span>Calendar</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <svg class="icon" role="presentation" focusable="false">
-          <use xlink:href="images/sprite.symbol.svg#fees-22"></use>
-        </svg>
-        <span>Fees</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+    <!--lets keep the other icons-->
+      <!-- Local (park) nav -->
+  <nav id="local-nav" class="park-nav" aria-label="Park sections">
+    <ul>
+      <li>
+        <a href="index.html">
+          <svg class="icon" role="presentation" focusable="false">
+            <use xlink:href="images/sprite.symbol.svg#info"></use>
+          </svg>
+          <span>Info</span>
+        </a>
+      </li>
+      <li>
+        <a href="conditions.html" aria-current="page">
+          <svg class="icon" role="presentation" focusable="false">
+            <use xlink:href="images/sprite.symbol.svg#alert"></use>
+          </svg>
+          <span>Alerts</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg class="icon" role="presentation" focusable="false">
+            <use xlink:href="images/sprite.symbol.svg#location"></use>
+          </svg>
+          <span>Maps</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg class="icon" role="presentation" focusable="false">
+            <use xlink:href="images/sprite.symbol.svg#calendar"></use>
+          </svg>
+          <span>Calendar</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg class="icon" role="presentation" focusable="false">
+            <use xlink:href="images/sprite.symbol.svg#fee-22"></use>
+          </svg>
+          <span>Fees</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
 
   <main id="main">
