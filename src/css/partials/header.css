@@ -88,12 +88,12 @@
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #333;
 }
-/* NEW (Part 6): space out each top-level nav item */
+/* (Part 6): space out each top-level nav item */
 
 .global-nav_list > li {
    border-bottom: 1px solid #333;
 }
-/* NEW (Part 6): submenu list (hidden by default) */
+/* (Part 6): submenu list (hidden by default) */
 
 .global-nav_submenu {
   list-style: none;
@@ -103,14 +103,14 @@
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-/* NEW (Part 6): submenu links */
+/* (Part 6): submenu links */
 
 .global-nav_submenu a {
   display: block;
   padding: 0.4rem 1rem 0.4rem 0;
   font-size: 0.95rem;
 }
-/* NEW (Part 6): show submenu when parent li has .submenu_open */
+/* (Part 6): show submenu when parent li has .submenu_open */
 
 .global-nav_list > li.submenu_open > .global-nav_submenu {
   max-height: 500px;
@@ -264,3 +264,48 @@
 #local-nav.open {
   display: block;
 }
+
+/* NEW (Part 6 wide screen): global nav layout for large screens */
+
+@media (min-width: 768px) {
+  /* Make the global nav content sit in a row of columns */
+  .global-nav_list {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 1.5rem;
+  }
+  /* Remove the mobile borders between items */
+  .global-nav_list > li {
+    border-bottom: none;
+  }
+  /* Top-level links become headings for each column */
+  .global-nav_split-button {
+    display: block;
+    padding: 0; /* remove extra padding from mobile row layout */
+  }
+  .global-nav_link {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Hide the little arrow buttons on large screens */
+  .global-nav_split-button-toggle {
+    display: none;
+  }
+
+  /* Submenu is always visible on large screens (no slide animation) */
+  .global-nav_submenu {
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .global-nav_submenu a {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+  }
+}  
