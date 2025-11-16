@@ -7,7 +7,46 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header id="site-header"></header>
+  <header>
+    <section class="global-header">
+      <a href="index.html" class="site-title">
+        <span class="logo" role="presentation"></span>
+        <span>National Park Service</span>
+      </a>
+
+      <div class="global-header__right">
+        <a class="search-icon" href="#park-footer" aria-label="Search">
+          <svg class="icon" role="img" aria-hidden="true">
+            <use xlink:href="images/sprite.symbol.svg#search"></use>
+          </svg>
+          <span class="visually-hidden">Search</span>
+        </a>
+
+        <button
+          id="global-nav-toggle"
+          class="global-nav_toggle"
+          aria-expanded="false"
+          aria-label="Open Menu"
+          aria-controls="global-nav"
+          type="button">
+
+          <div class="global-nav_toggle-closed">
+            <svg class="icon" role="img" aria-hidden="true">
+              <use xlink:href="images/sprite.symbol.svg#menu"></use>
+            </svg>
+            <span class="visually-hidden">Open</span> Menu
+          </div>
+
+          <div class="global-nav_toggle-open">
+            <svg class="icon" role="img" aria-hidden="true">
+              <use xlink:href="images/sprite.symbol.svg#close"></use>
+            </svg>
+            Close
+          </div>
+        </button>
+      </div>
+    </section>
+  </header>
 
   <section class="hero-banner">
     <img src="images/topo_pattern.png" alt="Yellowstone National Park background pattern">
