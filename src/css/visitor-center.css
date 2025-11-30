@@ -54,17 +54,14 @@
   border: 1px solid #d7d7d7;
   border-radius: 4px;
   margin-top: 1.25rem;
-  padding-top: 1rem;
   overflow: hidden;
   background-color: #ffffff;
 
 }
 
 .vc-details-list details {
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
-  margin: 0 0 0.75rem 0;
-  overflow: hidden;
+  margin: 0;
+  border: 0;
 }
 
 .vc-details-list details + details {
@@ -74,13 +71,13 @@
 .vc-details-list summary {
   display: flex;
   align-items: center;
-  padding: 0.9rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.04em;
   justify-content: space-between;
-  background-color: #f3f5f7;
+  background-color: #ffffff;
   cursor: pointer;
   list-style: none;
 }
@@ -131,7 +128,7 @@
 }
 
 .vc-details-list details[open] > summary {
-  background-color: #e7ecf1;
+  background-color: #f3f5f7;
 }
 
 .vc-details-list summary::-webkit-details-marker,
