@@ -101,3 +101,17 @@ export function activityTemplate(act) {
   const name = act?.name ?? act ?? "";
   return `<li class="activity-item">${name}</li>`;
 }
+
+
+// Part 7: make a <ul> from any array using a template function
+
+export function listTemplate(items, itemTemplate) {
+  const html = items.map(itemTemplate).join("");
+  return `<ul>${html}</ul>`;
+}
+
+// Part 7: template for one gallery image <li>
+export function vcImageTemplate(image) {
+  if (!image) return "";
+  return `<li><img src="${image.url}" alt="${image.altText ?? ""}"></li>`;
+}
