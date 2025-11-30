@@ -78,3 +78,13 @@ function buildContactHtml(center) {
 
   return emailHtml + phoneHtml;
 }
+
+// Build full VC page
+
+function renderVisitorCenter(center) {
+  const main = document.querySelector("#main");
+  if (!main || !center) return;
+
+  const image = center.images?.[0] || null;
+  const amenities = center.amenities || [];
+
