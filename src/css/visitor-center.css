@@ -1,0 +1,21 @@
+.vc-main {
+  padding: 1rem;
+}
+
+/* Page title with icon */
+
+.vc-name {
+  border-bottom: 1px solid var(--bs-grey-3);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vc-name .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  
+
+
