@@ -88,3 +88,69 @@ function renderVisitorCenter(center) {
   const image = center.images?.[0] || null;
   const amenities = center.amenities || [];
 
+  const galleryHtml = center.images?.length
+    ? listTemplate(center.images, vcImageTemplate)
+    : "<p>No images available.</p>";
+
+  const amenitiesHtml = amenities.length
+    ? listTemplate(amenities, vcAmenityTemplate)
+    : "<p>No amenities listed.</p>";
+
+  main.innerHTML = `
+    <h1 class="vc-name">
+      <svg class="icon" role="presentation" focusable="false">
+        <use xlink:href="images/sprite.symbol.svg#ranger-station"></use>
+      </svg>
+      ${center.name}
+    </h1>
+    
+    <section class="vc-info">
+      <figure>
+        <img src="${image?.url || ""}" alt="${image?.altText || ""}">
+        <figcaption>${image?.title || ""}</figcaption>
+      </figure>
+      <p>${center.description || ""}</p>
+    </section>
+
+    <section class="vc-details-list">
+      <details>
+        <summary>Addresses</summary>
+        ${buildAddressesHtml(center)}
+      </details>
+
+      <details>
+        <summary>Directions</summary>
+        ${buildDirectionsHtml(center)}
+      </details>
+
+      <details>
+        <summary>Amenities</summary>
+        ${amenitiesHtml}
+      </details>
+
+      <details>
+        <summary>Contact Information</summary>
+        ${buildContactHtml(center)}
+      </details>
+    </section>
+
+    <section class="vc-gallery">
+      <h2>Image Gallery</h2>
+      ${galleryHtml}
+    </section>
+  `;
+
+  // Only 1 details open at a time
+  const detailsList = main.querySelectorAll(".vc-details-list details");
+  detailsList.forEach(d => {
+    d.addEventListener("toggle", () => {
+      if (d.open) {
+        detailsList.forEach(other => {
+          if (other !== d) other.open = false;
+        });
+      }
+    });
+  });
+}
+
+
