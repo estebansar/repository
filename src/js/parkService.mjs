@@ -267,3 +267,22 @@ export async function getVisitorCenterData(parkCode) {
   const data = await getJson(url);
   return data?.data ?? [];
 }
+
+
+// Part7: visitor center/
+
+export async function getVisitorCenterData(parkCode) {
+  const apiKey = getApiKey();
+  const url = `https://developer.nps.gov/api/v1/visitorcenters?parkCode=${parkCode}&limit=50&api_key=${apiKey}`;
+  const data = await getJson(url);
+  return data?.data ?? [];
+}
+
+// Part 7: get details for a single visitor center by id
+
+export async function getParkVisitorCenterDetails(id) {
+  const apiKey = getApiKey();
+  const url = `https://developer.nps.gov/api/v1/visitorcenters?id=${id}&api_key=${apiKey}`;
+  const data = await getJson(url); // Part 7: use existing helper
+  return data?.data?.[0] ?? null; // Part 7: return first match or null
+}
