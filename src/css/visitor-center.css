@@ -51,34 +51,38 @@
 /*  (addresses, directions, amenities, contact) */
 
 .vc-details-list {
-  border-top: 1px solid var(--bs-grey-3);
+  border: 1px solid #d7d7d7;
   border-radius: 4px;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   padding-top: 1rem;
   overflow: hidden;
+  background-color: #ffffff;
+
 }
 
 .vc-details-list details {
-  border: 1px solid var(--bs-grey-3);
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.75rem;
-  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  margin: 0 0 0.75rem 0;
+  overflow: hidden;
 }
 
 .vc-details-list details + details {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #e2e4e7;
 }
 
 .vc-details-list summary {
   display: flex;
   align-items: center;
-  padding: 0.75rem 1rem; 
+  padding: 0.9rem 1.25rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.03em; 
-  background-color: #f8f9fa;
+  letter-spacing: 0.5px;
+  justify-content: space-between;
+  background-color: #f3f5f7;
   cursor: pointer;
+  list-style: none;
 }
 
 .vc-details-list summary .icon {
@@ -127,27 +131,39 @@
 }
 
 .vc-details-list details[open] > summary {
-  background-color: #e9ecef;
+  background-color: #e7ecf1;
 }
 
-.vc-details-list summary::-webkit-details-marker {
+.vc-details-list summary::-webkit-details-marker,
+.vc-details-list summary::marker {
   display: none;
 }
 
+/* Custom arrow — the NPS V-shape */
 .vc-details-list summary::after {
-  content: "▾";
-  margin-left: auto;
-  font-size: 0.8rem;
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #444;
+  border-bottom: 2px solid #444;
+  transform: rotate(45deg);   /* points down */
+  transition: transform 0.2s ease;
 }
 
+/* When OPEN, rotate arrow upward */
 .vc-details-list details[open] > summary::after {
-  content: "▴";
+  transform: rotate(-135deg);
 }
 
 /* Part 7: padding for the inside content */
 
 .vc-details-list details > *:not(summary) {
-  padding: 1rem 1.25rem 1.25rem;
+  padding: 1.2rem 1.5rem;
+  background: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+
 }
 
 /*Part 7: address section headings */
