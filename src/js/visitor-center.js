@@ -154,3 +154,21 @@ function renderVisitorCenter(center) {
 }
 
 
+//  function to start the page
+
+async function init() {
+  const parkData = await getParkData();
+  const id = getParam("id");
+
+  if (!id) {
+    console.warn("Visitor center ID missing in URL.");
+    return;
+  }
+
+  const center = await getParkVisitorCenterDetails(id);
+  setHeaderFooter(parkData);
+  renderVisitorCenter(center);
+}
+
+init();
+
