@@ -81,10 +81,15 @@ export function alertTemplate(alert) {
 }
 
 // part 4: updating tempalte for visitorcenter/
+// part 7: visitorcenter items now link to detail page/
 
 export function visitorCenterTemplate(vc) {
+  const name = vc.name ?? "";
+  const id = vc.id ?? ""; //Part 7: use the id in the URL
   return `<li class="visitor-item">
-    <h3>${vc.name ?? ""}</h3>
+    <h3>
+      <a href="visitor-center.html?id=${id}">${name}</a>  
+    </h3>  
     <p>${vc.description ?? ""}</p>
     <p><strong>Directions:</strong> ${vc.directionsInfo ?? ""}</p>
   </li>`;
