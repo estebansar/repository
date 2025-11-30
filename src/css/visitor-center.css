@@ -140,3 +140,6 @@
   font-size: 0.8rem;
 }
 
+.vc-details-list details[open] > summary::after {
+  content: "▴";
+}
