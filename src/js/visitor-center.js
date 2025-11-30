@@ -47,3 +47,16 @@ function buildAddressesHtml(center) {
 
   return physicalHtml + mailingHtml;
 }
+
+// Directions section
+function buildDirectionsHtml(center) {
+  const info = center.directionsInfo || "";
+  const url = center.directionsUrl || "";
+
+  return `
+    <p>${info}</p>
+    ${url ? `<p><a href="${url}" target="_blank">View detailed directions</a></p>` : ""}
+  `;
+}
+
+
