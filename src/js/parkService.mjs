@@ -259,7 +259,7 @@ export async function getParkAlerts(parkCode) {
   return data?.data ?? [];
 }
 
-// visitor center/
+// part 7: visitor center/
 
 export async function getVisitorCenterData(parkCode) {
   const apiKey = getApiKey();
