@@ -52,8 +52,10 @@
 
 .vc-details-list {
   border-top: 1px solid var(--bs-grey-3);
+  border-radius: 4px;
   margin-top: 1.5rem;
   padding-top: 1rem;
+  overflow: hidden;
 }
 
 .vc-details-list details {
@@ -62,6 +64,10 @@
   padding: 0.75rem 1rem;
   margin-bottom: 0.75rem;
   background-color: #fff;
+}
+
+.vc-details-list details + details {
+  border-top: 1px solid #ddd;
 }
 
 .vc-details-list summary {
