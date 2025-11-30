@@ -69,6 +69,15 @@ function buildContactHtml(center) {
 
   const emailHtml = email
     ? `
+      <section class="vc-contact-email">
+        <h3>Email Address</h3>
+        <a href="mailto:${email}">Email this visitor center</a>
+      </section>
+    `
+    : "";
+
+  const phoneHtml = phone
+    ? `
       <section class="vc-contact-phone">
         <h3>Phone Number</h3>
         <a href="tel:${phone.replace(/[^0-9+]/g, "")}">${phone}</a>
