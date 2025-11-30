@@ -115,3 +115,10 @@ export function vcImageTemplate(image) {
   if (!image) return "";
   return `<li><img src="${image.url}" alt="${image.altText ?? ""}"></li>`;
 }
+
+// Part 7: template for one amenity <li>
+
+export function vcAmenityTemplate(amenity) {
+  const text = typeof amenity === "string" ? amenity : amenity?.name ?? "";
+  return `<li>${text}</li>`;
+}
