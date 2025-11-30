@@ -268,16 +268,6 @@ export async function getVisitorCenterData(parkCode) {
   return data?.data ?? [];
 }
 
-
-// Part7: visitor center/
-
-export async function getVisitorCenterData(parkCode) {
-  const apiKey = getApiKey();
-  const url = `https://developer.nps.gov/api/v1/visitorcenters?parkCode=${parkCode}&limit=50&api_key=${apiKey}`;
-  const data = await getJson(url);
-  return data?.data ?? [];
-}
-
 // Part 7: get details for a single visitor center by id
 
 export async function getParkVisitorCenterDetails(id) {
