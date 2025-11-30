@@ -129,3 +129,14 @@
 .vc-details-list details[open] > summary {
   background-color: #e9ecef;
 }
+
+.vc-details-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.vc-details-list summary::after {
+  content: "▾";
+  margin-left: auto;
+  font-size: 0.8rem;
+}
+
