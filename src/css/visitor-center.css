@@ -143,3 +143,9 @@
 .vc-details-list details[open] > summary::after {
   content: "▴";
 }
+
+/* Part 7: padding for the inside content */
+
+.vc-details-list details > *:not(summary) {
+  padding: 1rem 1.25rem 1.25rem;
+}
