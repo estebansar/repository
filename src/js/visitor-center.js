@@ -59,4 +59,22 @@ function buildDirectionsHtml(center) {
   `;
 }
 
+// Contact section
+function buildContactHtml(center) {
+  const emails = center.contacts?.emailAddresses || [];
+  const phones = center.contacts?.phoneNumbers || [];
 
+  const email = emails[0]?.emailAddress || "";
+  const phone = phones[0]?.phoneNumber || "";
+
+  const emailHtml = email
+    ? `
+      <section class="vc-contact-phone">
+        <h3>Phone Number</h3>
+        <a href="tel:${phone.replace(/[^0-9+]/g, "")}">${phone}</a>
+      </section>
+    `
+    : "";
+
+  return emailHtml + phoneHtml;
+}
