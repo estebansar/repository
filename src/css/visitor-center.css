@@ -126,3 +126,6 @@
   border-radius: 0.5rem;
 }
 
+.vc-details-list details[open] > summary {
+  background-color: #e9ecef;
+}
