@@ -149,3 +149,13 @@
 .vc-details-list details > *:not(summary) {
   padding: 1rem 1.25rem 1.25rem;
 }
+
+/*Part 7: address section headings */
+
+.vc-addresses-physical h3,
+.vc-addresses-mailing h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; 
+  margin: 0 0 0.25rem; 
+}

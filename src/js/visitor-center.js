@@ -59,6 +59,28 @@ function buildDirectionsHtml(center) {
   `;
 }
 
+function buildHoursHtml(center) {
+  const hours = center.operatingHours || [];
+
+  if (!hours.length) {
+    return "<p>Hours and seasons information is not available.</p>";
+  }
+
+  return hours
+    .map((entry) => {
+      const name = entry.name || "Hours & Seasons";
+      const desc = entry.description || "";
+      return `
+        <section class="vc-hours-block">
+          <h3>${name}</h3>
+          <p>${desc}</p>
+        </section>
+      `;
+    })
+    .join("");
+}
+
+
 // Contact section
 function buildContactHtml(center) {
   const emails = center.contacts?.emailAddresses || [];
@@ -131,6 +153,12 @@ function renderVisitorCenter(center) {
         <summary>Directions</summary>
         ${buildDirectionsHtml(center)}
       </details>
+
+      <details>
+        <summary>Hours &amp; Seasons</summary>
+        ${buildHoursHtml(center)}
+      </details>
+
 
       <details>
         <summary>Amenities</summary>
